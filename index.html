@@ -788,6 +788,124 @@ body {
 }
 
 
+/* ===== ORDER INVITATION BUTTON ===== */
+
+.order-invite {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 800;
+}
+
+.order-invite-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+
+  text-decoration: none;
+  color: var(--cream);
+
+  background: rgba(20, 45, 33, 0.72);
+  border: 1px solid rgba(201, 169, 97, 0.45);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.3),
+    0 0 20px rgba(201,169,97,.12);
+
+  transition:
+    transform .3s var(--ease),
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.order-invite-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-bright);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.4),
+    0 0 25px rgba(201,169,97,.25);
+}
+
+.order-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--bg-deep);
+  background: linear-gradient(
+    135deg,
+    var(--gold-bright),
+    var(--gold)
+  );
+
+  font-size: 13px;
+}
+
+.order-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-text strong {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.order-text small {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cream-dim);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 430px) {
+
+  .order-invite {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .order-invite-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 12px;
+  }
+
+  .order-icon {
+    width: 27px;
+    height: 27px;
+    font-size: 11px;
+  }
+
+  .order-text strong {
+    font-size: 9px;
+    letter-spacing: .8px;
+  }
+
+  .order-text small {
+    font-size: 10px;
+  }
+}
+
+
   :root{
     --bg-deep: #060f0a;
     --bg: #0b1f16;
@@ -1576,7 +1694,16 @@ body {
 </style>
 </head>
 <body>
-
+<!-- ===== КНОПКА ЗАКАЗА ОНЛАЙН-ПРИГЛАШЕНИЯ ===== -->
+<div class="order-invite">
+  <a href="tel:+992757006677" class="order-invite-btn">
+    <span class="order-icon">✦</span>
+    <span class="order-text">
+      <strong>Заказать онлайн-приглашение</strong>
+      <small>+992 75 700 66 77</small>
+    </span>
+  </a>
+</div>
   
 <div id="bg-layers">
   <div class="orb orb1"></div>
