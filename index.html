@@ -8,6 +8,776 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Marck+Script&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
+
+/* =========================================================
+   MOBILE / SAMSUNG S21 / IPHONE / SMALL SCREENS
+   ========================================================= */
+
+/* Базовая защита от горизонтального скролла */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Изображения никогда не выходят за пределы карточки */
+.photo-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s var(--ease), filter .5s ease;
+}
+
+.photo-tile:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   TABLETS / LARGE MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .invitation {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+
+  .hero-3d-stage {
+    width: 100%;
+  }
+
+  .couple-names {
+    font-size: clamp(34px, 9vw, 46px);
+    line-height: 1.08;
+  }
+
+  .amp-3d {
+    font-size: clamp(70px, 20vw, 96px);
+  }
+
+  .hero-sub {
+    max-width: 280px;
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  .ring1 {
+    width: 230px;
+    height: 230px;
+    margin: -115px 0 0 -115px;
+  }
+
+  .ring2 {
+    width: 300px;
+    height: 300px;
+    margin: -150px 0 0 -150px;
+  }
+
+  /* PARENTS */
+  .parents-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .parent-card {
+    padding: 22px 10px;
+  }
+
+  .parent-name {
+    font-size: 14px;
+  }
+
+  /* DATE */
+  .date-ring-wrap {
+    width: 200px;
+    height: 200px;
+  }
+
+  .date-day {
+    font-size: 58px;
+  }
+
+  /* COUNTDOWN */
+  .countdown-grid {
+    width: 100%;
+    max-width: 390px;
+    gap: 7px;
+  }
+
+  .cd-card {
+    padding: 16px 3px;
+  }
+
+  .cd-num {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+
+  .cd-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* GALLERY */
+  .photo-grid {
+    gap: 8px;
+  }
+
+  .photo-tile {
+    min-width: 0;
+  }
+
+  /* RECEPTION */
+  .welcome-row {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .welcome-card {
+    min-width: 0;
+    padding: 16px 6px;
+    font-size: 9px;
+  }
+
+  .welcome-card strong {
+    font-size: 18px;
+  }
+
+  .calendar {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  /* MAP */
+  .map-card {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .map-wrap iframe {
+    width: 100%;
+    height: 230px;
+  }
+
+  /* RSVP */
+  .rsvp-choice {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .rsvp-choice button {
+    min-height: 48px;
+  }
+
+  .rsvp-form input,
+  .wish-form input,
+  .wish-form textarea {
+    width: 100%;
+    max-width: 330px;
+    font-size: 16px;
+  }
+
+  /* 16px предотвращает автоматический zoom на iPhone */
+  .rsvp-form input,
+  .wish-form input,
+  .wish-form textarea {
+    font-size: 16px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    max-width: 330px;
+  }
+
+  /* GIFT */
+  .gift-details {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .card-number {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  /* NAV */
+  #floating-nav {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  #floating-nav a {
+    font-size: 8px;
+  }
+
+  #floating-nav a .ic {
+    font-size: 15px;
+  }
+
+  #music-btn {
+    left: 14px;
+    bottom: 72px;
+  }
+}
+
+
+/* =========================================================
+   SAMSUNG S21 / IPHONE — 390-412px
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  section {
+    padding: 58px 16px;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 38px;
+    padding-bottom: 85px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .amp-3d {
+    font-size: 72px;
+    margin: 4px 0;
+  }
+
+  .couple-names {
+    font-size: 36px;
+    letter-spacing: 0;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 16px;
+  }
+
+  .scroll-hint {
+    margin-top: 34px;
+  }
+
+  .ring1 {
+    width: 205px;
+    height: 205px;
+    margin: -102px 0 0 -102px;
+  }
+
+  .ring2 {
+    width: 265px;
+    height: 265px;
+    margin: -132px 0 0 -132px;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    margin-bottom: 28px;
+  }
+
+  /* PARENTS */
+  .parents-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .parent-card {
+    padding: 18px 12px;
+  }
+
+  .side-label {
+    font-size: 9px;
+  }
+
+  .parent-name {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .announce {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .principal-name {
+    font-size: 28px;
+  }
+
+  /* DATE */
+  .date-ring-wrap {
+    width: 190px;
+    height: 190px;
+  }
+
+  .date-day {
+    font-size: 56px;
+  }
+
+  .date-year {
+    font-size: 13px;
+  }
+
+  /* COUNTDOWN */
+  .countdown-grid {
+    gap: 5px;
+  }
+
+  .cd-card {
+    padding: 14px 2px;
+  }
+
+  .cd-num {
+    font-size: 21px;
+  }
+
+  .cd-label {
+    font-size: 7px;
+    letter-spacing: .8px;
+  }
+
+  /* GALLERY */
+  .photo-grid {
+    gap: 7px;
+  }
+
+  .photo-tile {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* RECEPTION */
+  .reception-time {
+    font-size: 36px;
+    margin-bottom: 22px;
+  }
+
+  .welcome-row {
+    gap: 7px;
+  }
+
+  .welcome-card {
+    padding: 15px 4px;
+    font-size: 8px;
+    letter-spacing: .7px;
+  }
+
+  .welcome-card strong {
+    font-size: 17px;
+  }
+
+  .calendar {
+    margin-top: 28px;
+    padding: 18px 10px;
+  }
+
+  .cal-grid {
+    gap: 3px;
+    font-size: 10px;
+  }
+
+  .cal-grid .day {
+    padding: 6px 0;
+  }
+
+  /* BUTTONS */
+  .btn {
+    max-width: 100%;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    padding: 13px 20px;
+  }
+
+  /* RSVP */
+  .rsvp-question {
+    font-size: 16px;
+  }
+
+  .rsvp-choice {
+    gap: 7px;
+  }
+
+  .rsvp-choice button {
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 12px 5px;
+  }
+
+  /* MAP */
+  .venue-address {
+    font-size: 14px;
+  }
+
+  .map-wrap iframe {
+    height: 210px;
+  }
+
+  /* DRESS CODE */
+  .swatches {
+    gap: 18px;
+  }
+
+  .swatch {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    padding-left: 22px;
+  }
+
+  .timeline-item::before {
+    left: -22px;
+  }
+
+  .timeline-label {
+    font-size: 16px;
+  }
+
+  /* GUESTBOOK */
+  .wish-form input,
+  .wish-form textarea,
+  .rsvp-form input {
+    max-width: 100%;
+  }
+
+  .wish-card {
+    padding: 15px;
+  }
+
+  .wish-name {
+    font-size: 10px;
+  }
+
+  .wish-name span.date {
+    font-size: 9px;
+  }
+
+  .wish-text {
+    font-size: 14px;
+  }
+
+  /* GIFT */
+  .gift-box-3d {
+    width: 105px;
+    height: 100px;
+  }
+
+  .gift-details {
+    padding: 18px;
+  }
+
+  .card-number {
+    font-size: 15px;
+    letter-spacing: .5px;
+    word-spacing: 2px;
+  }
+
+  /* LIGHTBOX */
+  #lightbox .lb-frame {
+    width: calc(100vw - 60px);
+    max-width: 360px;
+  }
+
+  .lb-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .lb-prev {
+    left: 6px;
+  }
+
+  .lb-next {
+    right: 6px;
+  }
+
+  /* NAVIGATION */
+  #floating-nav {
+    gap: 0;
+    padding-top: 8px;
+  }
+
+  #floating-nav a {
+    min-width: 58px;
+    font-size: 7px;
+    letter-spacing: .6px;
+  }
+
+  #floating-nav a .ic {
+    font-size: 14px;
+  }
+
+  #music-btn {
+    width: 42px;
+    height: 42px;
+    left: 12px;
+    bottom: 68px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 50px 16px 100px;
+  }
+
+  .footer-names {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 320-360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .couple-names {
+    font-size: 32px;
+  }
+
+  .amp-3d {
+    font-size: 64px;
+  }
+
+  .hero-sub {
+    font-size: 12px;
+    max-width: 250px;
+  }
+
+  .ring1 {
+    width: 180px;
+    height: 180px;
+    margin: -90px 0 0 -90px;
+  }
+
+  .ring2 {
+    width: 230px;
+    height: 230px;
+    margin: -115px 0 0 -115px;
+  }
+
+  .countdown-grid {
+    gap: 3px;
+  }
+
+  .cd-num {
+    font-size: 19px;
+  }
+
+  .cd-label {
+    font-size: 6px;
+  }
+
+  .welcome-card strong {
+    font-size: 15px;
+  }
+
+  .cal-grid {
+    gap: 1px;
+  }
+
+  .cal-grid .day {
+    padding: 5px 0;
+  }
+
+  .swatches {
+    gap: 12px;
+  }
+
+  .swatch {
+    width: 42px;
+    height: 42px;
+  }
+
+  #floating-nav a {
+    min-width: 50px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE MODE ON PHONE
+   ========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .hero {
+    min-height: 650px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+
+  .amp-3d {
+    font-size: 65px;
+  }
+
+  .couple-names {
+    font-size: 34px;
+  }
+
+  .hero-sub {
+    margin-top: 10px;
+  }
+
+  .scroll-hint {
+    margin-top: 20px;
+  }
+
+  #floating-nav {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 0;
+    padding: 7px;
+  }
+}
+
+
+/* =========================================================
+   SAFE AREA — MODERN SAMSUNG / IPHONE
+   ========================================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+  #floating-nav {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+
+  #music-btn {
+    bottom: calc(68px + env(safe-area-inset-bottom));
+  }
+
+  footer {
+    padding-bottom: calc(90px + env(safe-area-inset-bottom));
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .photo-tile:hover {
+    border-color: var(--glass-border);
+  }
+
+  .photo-tile:hover img {
+    transform: none;
+  }
+
+  .glass-card:hover {
+    border-color: var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  }
+
+  .swatch:hover {
+    transform: none;
+  }
+
+  .tile-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(
+      180deg,
+      transparent 60%,
+      rgba(0,0,0,.45)
+    ) !important;
+  }
+
+  /* Убираем hover-зависимость */
+  .btn:hover {
+    background: transparent;
+    color: var(--gold);
+    box-shadow: none;
+  }
+
+  .btn.solid:hover {
+    background: var(--gold);
+    color: var(--bg-deep);
+  }
+}
+
+
+/* =========================================================
+   PREVENT TEXT / CONTENT OVERFLOW
+   ========================================================= */
+
+.principal-name,
+.parent-name,
+.wish-text,
+.venue-address,
+.gift-details,
+.hero-sub {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.card-number {
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   BETTER MOBILE LIGHTBOX
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  #lightbox {
+    padding: 20px;
+  }
+
+  #lightbox .lb-frame {
+    width: min(82vw, 380px);
+    height: auto;
+  }
+
+  .lb-close {
+    top: max(14px, env(safe-area-inset-top));
+    right: 14px;
+  }
+}
+
+
   :root{
     --bg-deep: #060f0a;
     --bg: #0b1f16;
